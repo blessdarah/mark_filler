@@ -1,0 +1,506 @@
+$font-stack: Montserrat, sans-serif, helvetica;
+$background-color: #f7f7f7;
+$btn-height: 35px;
+$bg-primary: maroon;
+$bg-secondary: steelblue;
+$bg-default: #e4e4e4;
+
+$color-scheme: (
+  "primary": maroon,
+  "secondary": steelblue,
+  "default": #e4e4e4,
+  "success": rgb(47, 177, 159)
+);
+
+/* Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+body {
+  font: 100% $font-stack;
+  color: ligthen(black, 50%);
+  width: 90%;
+  margin: 0 auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+@for $count from 1 to 7 {
+  h#{$count} {
+    font-weight: 600;
+  }
+}
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 26px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+p {
+  line-height: 28px;
+  font: {
+    weight: 400;
+    size: 18px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+blockquote {
+  border-left: 10px solid $bg-default;
+  padding: 20px 50px;
+  width: 70%;
+  margin: 0 auto;
+
+  p {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    position: relative;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+
+    &::before {
+      position: absolute;
+      top: 30px;
+      right: -20px;
+      content: '"';
+      font-family: "Times New Roman", Times, serif;
+      font-size: 160px;
+      color: $bg-default;
+    }
+  }
+
+  cite {
+    display: block;
+    text-align: right;
+  }
+}
+
+.btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  height: $btn-height;
+  line-height: $btn-height - 20px;
+  display: inline-block;
+  margin: 20px 0;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+@each $color-name, $color in $color-scheme {
+  .btn-#{$color-name} {
+    background: $color;
+
+    &:hover {
+      opacity: ligthen($color, 7%);
+    }
+  }
+
+  .text-#{$color-name} {
+    color: $color;
+  }
+
+  .bg-#{$color-name} {
+    background: $color;
+  }
+}
+
+/* Navigation Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  line-height: 80px;
+  overflow: hidden;
+  border-bottom: 4px solid $bg-primary;
+  margin-bottom: 50px;
+
+  & .logo {
+    width: auto;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  nav {
+    width: 80%;
+
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+    }
+
+    li {
+      margin-left: 30px;
+
+      a {
+        text-decoration: none;
+        color: black;
+        opacity: 0.8;
+        font-weight: bold;
+
+        &:hover {
+          color: $bg-primary;
+        }
+      }
+
+      &.active > a {
+        color: $bg-primary;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Carousel styles */
+
+.carousel {
+  height: 400px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: {
+    image: url(../imgs/lubo.jpg);
+    size: cover;
+    repeat: no-repeat;
+    position: center;
+  }
+
+  .content {
+    width: 60%;
+    margin: 0 auto;
+
+    h1 {
+      position: relative;
+      font: {
+        size: 48px;
+        weight: bold;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: $bg-default;
+      }
+    }
+
+    p.lead {
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+  }
+}
+
+/* Features Section */
+
+@mixin shadow {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+@mixin underline {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10%;
+    height: 4px;
+    background: $bg-primary;
+    bottom: -20px;
+    left: 45%;
+  }
+}
+
+.underline {
+  @include underline();
+}
+
+.features {
+  padding: 100px 0;
+
+  h2 {
+    @include underline();
+  }
+
+  & > div {
+    display: flex;
+  }
+
+  .feature-item {
+    width: (100% / 3);
+    padding: 15px 20px;
+
+    h5 {
+      margin-bottom: 15px;
+    }
+    h5,
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.banner {
+  padding: 80px 100px;
+  text-align: center;
+  margin-bottom: 100px;
+
+  h5 {
+    margin-bottom: 20px;
+  }
+}
+
+.testimonial {
+  h2 {
+    @include underline();
+  }
+
+  .controls {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 30px auto;
+
+    & > div {
+      display: flex;
+    }
+
+    .control {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $bg-default;
+      margin: 20px 10px;
+      cursor: pointer;
+    }
+
+    .active-control {
+      background-color: $bg-primary;
+    }
+  }
+}
+
+footer {
+  background: $bg-default;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid $bg-primary;
+  margin-top: 100px;
+
+  & > div a {
+    line-height: 35px;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  h4 {
+    color: $bg-primary;
+    margin-bottom: 20px;
+  }
+}
+
+form {
+  .form-box {
+    padding: 10px;
+
+    label {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: $btn-height;
+      padding-left: 10px;
+      margin-top: 10px;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      line-height: $btn-height;
+      opacity: 0.7;
+      letter-spacing: 1px;
+
+      &:focus {
+        border-bottom-color: $bg-primary;
+      }
+    }
+
+    .content-inline {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 100px;
+      }
+    }
+  }
+}
+.login-form {
+  width: 500px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  border: none;
+  border-radius: 8px;
+  background: $bg-default;
+
+  p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  input.btn {
+    transform: translateX(100px);
+    width: 200px;
+    margin-top: 20px;
+  }
+}
+
+/* About page stylling */
+
+main.about-us {
+  #what-we-do h2 {
+    margin-top: 30px;
+  }
+}
+
+/* Contact page styling */
+
+main.contact-us {
+  display: flex;
+  justify-content: space-around;
+
+  form {
+    background: $bg-default;
+    padding: 30px 40px;
+    width: 600px;
+    border-radius: 10px;
+    textarea {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      padding: 20px 10px;
+      font-family: $font-stack;
+    }
+
+    input.btn {
+      margin-left: 10px;
+    }
+  }
+
+  .content-left {
+    padding-right: 40px;
+    border-right: 4px solid $bg-default;
+  }
+}
+
+/* Projects Styling */
+
+main.projects {
+  .new {
+    width: 200px;
+    height: 200px;
+    display: grid;
+    place-items: center;
+    border-radius: 4px;
+    background: $bg-default;
+    border: 2px dashed $bg-primary;
+
+    &:hover {
+      cursor: pointer;
+      background: white;
+    }
+
+    p {
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: $bg-default;
+    border-radius: 10px;
+    position: fixed;
+    right: 5%;
+    top: 20%;
+    @include shadow();
+    input.btn {
+      margin-left: 10px;
+    }
+
+    p.close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: $btn-height;
+      height: $btn-height;
+      line-height: $btn-height;
+      font-weight: bolder;
+      background: $bg-primary;
+      color: white;
+      text-align: center;
+      border-radius: 50%;
+      @include shadow;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,511 @@
+/* Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  font: 100% Montserrat, sans-serif, helvetica;
+  color: ligthen(black, 50%);
+  width: 90%;
+  margin: 0 auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h5 {
+  font-weight: 600;
+}
+
+h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 26px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+p {
+  line-height: 28px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+blockquote {
+  border-left: 10px solid #e4e4e4;
+  padding: 20px 50px;
+  width: 70%;
+  margin: 0 auto;
+}
+blockquote p {
+  font-style: italic;
+  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  position: relative;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+blockquote p::before {
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  content: '"';
+  font-family: "Times New Roman", Times, serif;
+  font-size: 160px;
+  color: #e4e4e4;
+}
+blockquote cite {
+  display: block;
+  text-align: right;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  height: 35px;
+  line-height: 15px;
+  display: inline-block;
+  margin: 20px 0;
+}
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: maroon;
+}
+.btn-primary:hover {
+  opacity: ligthen(maroon, 7%);
+}
+
+.text-primary {
+  color: maroon;
+}
+
+.bg-primary {
+  background: maroon;
+}
+
+.btn-secondary {
+  background: steelblue;
+}
+.btn-secondary:hover {
+  opacity: ligthen(steelblue, 7%);
+}
+
+.text-secondary {
+  color: steelblue;
+}
+
+.bg-secondary {
+  background: steelblue;
+}
+
+.btn-default {
+  background: #e4e4e4;
+}
+.btn-default:hover {
+  opacity: ligthen(#e4e4e4, 7%);
+}
+
+.text-default {
+  color: #e4e4e4;
+}
+
+.bg-default {
+  background: #e4e4e4;
+}
+
+.btn-success {
+  background: #2fb19f;
+}
+.btn-success:hover {
+  opacity: ligthen(#2fb19f, 7%);
+}
+
+.text-success {
+  color: #2fb19f;
+}
+
+.bg-success {
+  background: #2fb19f;
+}
+
+/* Navigation Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  line-height: 80px;
+  overflow: hidden;
+  border-bottom: 4px solid maroon;
+  margin-bottom: 50px;
+}
+header .logo {
+  width: auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+}
+header nav {
+  width: 80%;
+}
+header nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+header nav li {
+  margin-left: 30px;
+}
+header nav li a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.8;
+  font-weight: bold;
+}
+header nav li a:hover {
+  color: maroon;
+}
+header nav li.active > a {
+  color: maroon;
+  opacity: 1;
+}
+
+/* Carousel styles */
+.carousel {
+  height: 400px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background-image: url(../imgs/lubo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.carousel .content {
+  width: 60%;
+  margin: 0 auto;
+}
+.carousel .content h1 {
+  position: relative;
+  font-size: 48px;
+  font-weight: bold;
+}
+.carousel .content h1::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #e4e4e4;
+}
+.carousel .content p.lead {
+  opacity: 0.8;
+  margin-top: 20px;
+}
+
+/* Features Section */
+.underline {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+.underline::after {
+  position: absolute;
+  content: "";
+  width: 10%;
+  height: 4px;
+  background: maroon;
+  bottom: -20px;
+  left: 45%;
+}
+
+.features {
+  padding: 100px 0;
+}
+.features h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+.features h2::after {
+  position: absolute;
+  content: "";
+  width: 10%;
+  height: 4px;
+  background: maroon;
+  bottom: -20px;
+  left: 45%;
+}
+.features > div {
+  display: flex;
+}
+.features .feature-item {
+  width: 33.3333333333%;
+  padding: 15px 20px;
+}
+.features .feature-item h5 {
+  margin-bottom: 15px;
+}
+.features .feature-item h5,
+.features .feature-item p {
+  text-align: center;
+}
+
+.banner {
+  padding: 80px 100px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.banner h5 {
+  margin-bottom: 20px;
+}
+
+.testimonial h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+.testimonial h2::after {
+  position: absolute;
+  content: "";
+  width: 10%;
+  height: 4px;
+  background: maroon;
+  bottom: -20px;
+  left: 45%;
+}
+.testimonial .controls {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: 30px auto;
+}
+.testimonial .controls > div {
+  display: flex;
+}
+.testimonial .controls .control {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  margin: 20px 10px;
+  cursor: pointer;
+}
+.testimonial .controls .active-control {
+  background-color: maroon;
+}
+
+footer {
+  background: #e4e4e4;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid maroon;
+  margin-top: 100px;
+}
+footer > div a {
+  line-height: 35px;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer h4 {
+  color: maroon;
+  margin-bottom: 20px;
+}
+
+form .form-box {
+  padding: 10px;
+}
+form .form-box label {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+form .form-box input,
+form .form-box select {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  margin-top: 10px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  line-height: 35px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+form .form-box input:focus,
+form .form-box select:focus {
+  border-bottom-color: maroon;
+}
+form .form-box .content-inline {
+  display: flex;
+  justify-content: space-between;
+}
+form .form-box .content-inline input {
+  width: 100px;
+}
+
+.login-form {
+  width: 500px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  border: none;
+  border-radius: 8px;
+  background: #e4e4e4;
+}
+.login-form p {
+  font-size: 14px;
+  text-align: center;
+}
+.login-form input.btn {
+  transform: translateX(100px);
+  width: 200px;
+  margin-top: 20px;
+}
+
+/* About page stylling */
+main.about-us #what-we-do h2 {
+  margin-top: 30px;
+}
+
+/* Contact page styling */
+main.contact-us {
+  display: flex;
+  justify-content: space-around;
+}
+main.contact-us form {
+  background: #e4e4e4;
+  padding: 30px 40px;
+  width: 600px;
+  border-radius: 10px;
+}
+main.contact-us form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  padding: 20px 10px;
+  font-family: Montserrat, sans-serif, helvetica;
+}
+main.contact-us form input.btn {
+  margin-left: 10px;
+}
+main.contact-us .content-left {
+  padding-right: 40px;
+  border-right: 4px solid #e4e4e4;
+}
+
+/* Projects Styling */
+main.projects .new {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: #e4e4e4;
+  border: 2px dashed maroon;
+}
+main.projects .new:hover {
+  cursor: pointer;
+  background: white;
+}
+main.projects .new p {
+  font-weight: bold;
+  text-align: center;
+}
+main.projects form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  position: fixed;
+  right: 5%;
+  top: 20%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+main.projects form input.btn {
+  margin-left: 10px;
+}
+main.projects form p.close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-weight: bolder;
+  background: maroon;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+main.projects form p.close:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */
